@@ -73,3 +73,19 @@ spec:
   dependsOn:
     - name: cluster-issuer
       namespace: flux-system
+    - name: external-dns
+      namespace: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: external-dns
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./clusters/kubernello/external-dns
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  validation: client

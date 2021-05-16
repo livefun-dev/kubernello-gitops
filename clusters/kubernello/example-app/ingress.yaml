@@ -9,7 +9,7 @@ metadata:
   name: nginx
 spec:
   rules:
-    - host: nginx.demo.livefun.dev
+    - host: pippo.demo.livefun.dev
       http:
         paths:
           - path: "/"
@@ -21,5 +21,5 @@ spec:
                   number: 80
   tls:
     - hosts:
-        - nginx.demo.livefun.dev
-      secretName: nginx.demo.livefun.dev-tls
+        - pippo.demo.livefun.dev
+      secretName: pippo.demo.livefun.dev-tls
